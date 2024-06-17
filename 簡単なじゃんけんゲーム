@@ -1,0 +1,45 @@
+import random as rd
+str_hand =  ["グー","チョキ","パー"]
+
+result = [[0,1,2],
+          [2,0,1],
+          [1,2,0]]
+
+def play_game():
+    while True:
+
+      c_hand = rd.randint(0,2)
+
+str = input("0:グー 1:チョキ 2:パー > ")
+if str == "end":
+  return False
+
+
+if str == "0" or str == "1" or str == "2":
+  p_hand = int(str)
+
+else:
+  print("0 1 2 のどれかを入力してください")
+  continue
+
+print("　***********************")
+print("　あなた:",str_hand[p_hand]," CPU:",str_hand[c_hand])
+
+ret = result[p_hand][c_hand]
+
+if ret == 0:
+  print("　あいこです")
+
+elif ret == 1:
+  print("　*** あなたの勝ちです ***")
+
+else:
+  print("　*** あなたの負けです ***")
+  break
+
+  return True
+
+
+  print("じゃんけんゲーム end入力で終了")
+  while play_game():
+    print(" ")
